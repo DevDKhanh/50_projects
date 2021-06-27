@@ -1,0 +1,285 @@
+
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans+JP);
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+*,html {
+    font-family: 'Noto Sans JP';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    width: 100%;
+    min-height: 100%;
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+}
+
+a {
+    text-decoration: none;
+}
+
+.menu {
+    height: 100vh; 
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    position: fixed;
+}
+
+section {
+    margin-left: 50px;
+    height: 100vh;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    scroll-snap-align: start;
+}
+
+.introduce {
+    overflow: hidden;
+    background: 
+    linear-gradient(217deg, rgba(0, 162, 255, 0.8), rgba(0,0,255,0) 70.71%),
+    linear-gradient(150deg, rgba(146, 79, 255, 0.8), rgba(255,0,0,0) 70.71%),
+    linear-gradient(300deg, rgba(255, 151, 54, 0.8), rgba(0,255,0,0) 70.71%);
+}
+
+.info {
+    flex: 1;
+}
+
+.h1-say, .h2-text {
+    margin-left: 3rem;
+}  
+
+.tab1 {
+    margin-left: 1rem;
+}
+
+.tab2 {
+     margin-left: 2rem;
+}
+
+.h1-say {
+    position: relative;
+    color: #fff;
+    display: flex;
+    font-size: 4.5rem;
+    font-weight: 600;
+    flex-wrap: wrap;
+    text-shadow: 
+        0.1rem 0 0 #ff2551,
+        -0.15rem -0.1rem 0rem #00ff2a,
+        0.1rem 0.15rem 0rem #0400ff;
+    /* animation: text-effect .5s infinite; */
+}
+
+.h1-say span {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.h1-say span:first-child {
+    animation: text-effect .75s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+    transform: translate(-0.05rem, -0.025rem);
+    opacity: .8;
+}
+
+.h1-say span:last-child {
+    animation: text-effect .35s infinite;
+    clip-path: polygon(0 80%, 100% 20%, 100% 100%, 0 100%);
+    transform: translate(0.025rem, 0.05rem);
+    opacity: .8;
+}
+
+@keyframes text-effect {
+    0% {
+        text-shadow: 
+        0.1rem 0 0 #ff2551,
+        -0.15rem -0.1rem 0rem #00ff2a,
+        0.1rem 0.15rem 0rem #0400ff;
+    } 14% {
+        text-shadow: 
+        0.1rem 0 0 #ff2551,
+        -0.15rem -0.1rem 0rem #00ff2a,
+        0.1rem 0.15rem 0rem #0400ff;
+    } 15% {
+        text-shadow: 
+        -0.1rem -0.15rem 0 #ff2551,
+        0.07rem 0.1rem 0rem #00ff2a,
+        -0.1rem -0.07rem 0rem #0400ff;
+    } 49% {
+        text-shadow: 
+        -0.1rem -0.15rem 0 #ff2551,
+        0.07rem 0.1rem 0rem #00ff2a,
+        -0.1rem -0.07rem 0rem #0400ff;
+    } 50% {
+        text-shadow: 
+        0.1rem 0.1rem 0 #ff2551,
+        0.15rem 0rem 0rem #00ff2a,
+        0rem -0.15rem 0rem #0400ff;
+    } 99% {
+        text-shadow: 
+        0.1rem 0.1rem 0 #ff2551,
+        0.15rem 0rem 0rem #00ff2a,
+        0rem -0.15rem 0rem #0400ff;
+    } 100% {
+        text-shadow: 
+        -0.1rem 0rem 0 #ff2551,
+        -0.07rem -0.07rem 0rem #00ff2a,
+        -0.07rem -0.15rem 0rem #0400ff;
+    }
+}
+
+.h2-text {
+    font-size: 2.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-shadow: 
+        0.2rem 0rem 0 #f62b52,
+        0rem -0.2rem 0rem #24ece7;
+}
+
+.tag {
+    font-family: 'Dancing Script';
+    font-size: 2rem;
+}
+
+.introduce > .contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 27%;
+}   
+
+.contact > .contact-me {
+    position: relative;
+    flex: none;
+    margin-top: 2rem;
+    padding: 1rem 4rem;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    transition: .3s linear;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 
+        0.2rem 0.2rem 0 #f62b52,
+        -0.2rem -0.2rem 0rem #24ece7;
+}
+
+.contact-me:hover {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    box-shadow: 
+        0.2rem 0.2rem 0 #f62b52,
+        0.2rem 0.2rem .6rem #f81542,
+        -0.2rem -0.2rem 0rem #24ece7,
+        -0.2rem -0.2rem .6rem #09fff7;
+}
+
+.contact-me span {
+    margin: 0;
+    position: absolute;
+    top: -100px;
+    left: -200px;
+    background-color: #ffffff;
+    height: 500%;
+    transform: rotate(15deg);
+    width: 0px;
+    transition: .9s;
+    z-index: -1;
+}
+
+.contact-me:hover span {
+    width: 500px;
+}
+
+.photos { 
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    transition: .4s;
+    background-color: #ffffff;
+    box-shadow: 0 0 .5rem #1e1e1e;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+}
+
+.photos:hover:after {
+    transform: rotate(-25deg);
+}
+
+.photos:hover:before {
+    transform: rotate(-45deg);
+}
+
+.photos::after {
+    content: url('https://images.pexels.com/photos/4186329/pexels-photo-4186329.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -10px;
+    left: -10px;
+    background-color: rgb(247, 247, 247);
+    box-shadow: 0 0 .5rem #1e1e1e;
+    transition: .4s;
+    display: flex;
+    transform: rotate(-10deg);
+    align-items: flex-end;
+}
+
+.photos::before {
+    content: url('https://images.pexels.com/photos/225157/pexels-photo-225157.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    background-size: cover;
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -20px;
+    left: -20px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 .5rem #1e1e1e;
+    transition: .4s;
+    transform: rotate(-25deg);
+    display: flex;
+    align-items: flex-end;
+}
+
+.photos-content {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    transition: .4s;
+    box-shadow: 0 0 .5rem #1e1e1e;
+    display: flex;
+    align-items: flex-end;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.photos:hover .photos-content{
+    transform: rotate(5deg);
+}
+
+.photos-content > img {
+    width: 106%;
+    transition: .3s;
+}
+
+.photos:hover .photos-content > img {
+    width: 110%;
+}
