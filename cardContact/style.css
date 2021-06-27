@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main, .card {
+    animation: all .3s ease-in-out;
+}
+
+.info-content {
+    background-image: linear-gradient(to bottom, rgb(255, 85, 85), rgb(236, 37, 37));
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: .5rem;
+    position: relative;
+}
+
+.info-content .avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.info-content .info-text {
+    flex: .9;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.info-text .title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.info-text .text {
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(87, 57, 29);
+    font-weight: 600;
+    padding: 0 1.4rem;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to bottom, rgb(255, 230, 0), rgb(255, 196, 0));
+    border-radius: 1rem;
+    height: 40px;
+    line-height: 40px;
+    transition: .4s;
+}
+
+.btn-contact .icon {
+    display: none;
+}
+
+.btn-contact .icon img {
+    width: 50%;
+}
+
+.btn-contact:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to bottom, rgb(255, 242, 129),rgb(253, 226, 135));
+}
+
+.list-items {
+    display: none;
+}
+
+.list-items .title {
+    color: #fff;
+    background-color: brown;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.list-items .list .item{
+    background-color: #fff;
+    opacity: 0;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: .5rem;
+}
+
+.list-items .item .text {
+    flex: .9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.title-card {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.text .info {
+    color: rgb(119, 119, 119);
+}
+
+.item .icon {
+    width: 55px;
+    height: 55px;
+    border-radius: .5rem;
+    overflow: hidden;
+}
+
+.fb .title-card{
+    color: rgb(0, 119, 255);
+}
+
+.fb {
+    animation: show .3s .1s linear forwards;
+}
+
+.mail .title-card{
+    color: rgb(255, 0, 43);
+}
+
+.mail {
+    animation: show .3s .3s linear forwards;
+}
+
+.zalo .title-card{
+    color: rgb(17, 206, 231);
+}
+
+.zalo {
+    animation: show .3s .6s linear forwards;
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    } to {
+        opacity: 1;
+    }
+}
+
+/* handle */
+.contact-check:checked ~ .info-content {
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#contact-check:checked~.info-content .btn-contact {
+    width: 70px;
+    height: 70px;
+    line-height: 50px;
+    overflow: hidden;
+    border-radius: 50%;
+    padding: 0;
+    bottom: 10px;
+    left: 85%;
+    transform: translateX(-50%);
+}
+
+#contact-check:checked~.info-content .btn-contact .text{
+    display: none;
+}
+
+#contact-check:checked~.info-content .btn-contact .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-check:checked ~ .list-items {
+    display: block;
+}
