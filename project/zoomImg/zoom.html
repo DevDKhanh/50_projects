@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main">
+        <div class="img">
+            <img id="img-1" src="./img/img.jpg" alt="">
+            <div class="zoom">
+            </div>
+        </div>
+        <div class="list-img">
+            <div class="item">
+                <img class="img-item active" src="./img/img.jpg" alt="">
+            </div>
+            <div class="item">
+                <img class="img-item" src="./img/img2.jpg" alt="">
+            </div>
+            <div class="item">
+                <img class="img-item" src="./img/img3.jpg" alt="">
+            </div>
+            <div class="item">
+                <img class="img-item" src="./img/img4.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <script>
+        const img = document.querySelector('.img');
+        const span = document.createElement('span');
+        const imgItem = document.querySelectorAll('.img-item');
+        if (span) {
+            function zoom(id) {
+                const img_1 = document.querySelector(`#${id}`);
+                const zoom = document.querySelector('.zoom');
+
+                let ratio = 2.5;
+
+                zoom.style.background = `url(${img_1.src})`;
+                zoom.style.backgroundRepeat = 'no-repeat';
+                zoom.style.backgroundSize = (img_1.width*ratio)+'px '+(img_1.height*ratio)+'px' ;
+
+                function moveZoom(isX, isY) {
+                    let pos = getCursor();
+                    let posX;
+                    let posY = pos.y*ratio - (zoom.offsetHeight/2); 
+
+                    if (isX) {
+                        posX = pos.x*ratio - (zoom.offsetWidth/2);
+                    } else {
+                        posX = (img_1.width*ratio)-zoom.offsetWidth;
+                    }
+
+                    if (isY) {
+                        posY = pos.y*ratio - (zoom.offsetHeight/2);
+                    } else {
+                        posY = (img_1.height*ratio)-zoom.offsetHeight;
+                    }
+
+                    if (posX <= 0 ) {
+                        posX = 0;
+                    } 
+
+                    if (posY <= 0 ) {
+                        posY = 0;
+                    } 
+
+                    zoom.style.backgroundPosition = `-${posX}px -${posY}px`;
+                }
+
+                function getCursor() {
+
+                    const e = window.event;
+                    const bounds = img_1.getBoundingClientRect();
+
+                    let x = e.pageX - bounds.left;
+                    let y = e.pageY - bounds.top;
+
+                    return {
+                        'x': x,
+                        'y': y
+                    }
+                }
+
+                img.addEventListener('mouseover', function(e){
+                    img.appendChild(span)
+                });
+                img.addEventListener('mouseleave', function(e){
+                    img.removeChild(span)
+                });
+
+                img.addEventListener('mousemove', function(e) {
+                    const maxX = img.offsetWidth-(span.offsetWidth/2);
+                    const maxY = img.offsetHeight-(span.offsetHeight/2);
+                    const minX = span.offsetWidth/2;
+                    const minY = span.offsetWidth/2;
+                    const y = e.clientY - img.offsetTop;
+                    const x = e.clientX - img.offsetLeft;
+                    let isX = true;
+                    let isY = true;
+
+                    if ( maxX >= x && x >= minX) {
+                        span.style.left=x+'px';
+                        isX=true;
+                    } else {
+                        if (x>maxX) {
+                            isX=false;
+                            span.style.left=maxX+'px'; 
+                        } else {
+                            span.style.left=minX+'px'; 
+                        }
+                    }
+
+                    if (maxY >= y && y >= minY) {
+                        span.style.top=y+'px';
+                        isY=true;
+                    } else {
+                        if (y>maxY) {
+                            isY=false;
+                            span.style.top=maxY+'px'; 
+                        } else {
+                            span.style.top=minY+'px'; 
+                        }
+                    }
+                    moveZoom(isX, isY);
+                });
+            }
+            zoom('img-1');
+        }
+
+        imgItem.forEach(item=>{
+            item.addEventListener('click', function(e){
+                document.getElementById('img-1').src=e.target.currentSrc;
+                document.querySelector('.img-item.active').classList.remove('active');
+                e.target.classList.add('active')
+                zoom('img-1');
+            })
+        })
+    </script>
+</body>
+</html>

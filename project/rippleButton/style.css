@@ -1,0 +1,62 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+button {
+    position: relative;
+    padding: 1rem 2rem;
+    margin: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 3rem;
+    border: none;
+    outline: none;
+    overflow: hidden;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button.style1 {
+    background-image: linear-gradient(to right, rgb(0, 174, 255), rgb(0, 225, 255));
+    color: #fff;
+}
+
+button.style2 {
+    background-image: linear-gradient(to right, rgb(55, 0, 255), rgb(140, 0, 255));
+    color: #fff;
+}
+
+span {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.61);
+    border-radius: 50%;
+    animation: effect .45s linear forwards;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes effect {
+    from {
+        width: 0;
+        height: 0;
+    } to {
+        width: 300px;
+        height: 300px;
+    }
+}

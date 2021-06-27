@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 3rem;
+}
+
+.img {
+    position: relative;
+    width: 60%;
+    border: 2px #ccc solid;
+}
+
+.img:hover {
+    cursor: crosshair;
+}
+
+.img img {
+    pointer-events: none;
+    width: 100%;
+}
+
+.img span {
+    position: absolute;
+    display: block;
+    width: 150px;
+    height: 150px;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.527);
+    border: 1px #000 solid;
+}
+
+.zoom {
+    border: #000 2px solid;
+    display: none;
+    position: absolute;
+    width: calc(150px*2.5);
+    height: calc(150px*2.5);
+    right: -450px;
+    top: 0;
+}
+
+.img:hover .zoom {
+    display: block;
+} 
+
+.list-img {
+    min-height: 70px;
+    overflow: hidden;
+    width: 60%;
+    margin-top: 20px;
+    display: flex;
+}
+
+.list-img .item {
+    width: calc(100%/6);
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.list-img .item .img-item {
+    width: 100%;    
+    box-shadow: 0 0 2px #000;
+}
+
+.list-img .item .img-item.active {
+    width: 100%;    
+    box-shadow: 0 0 6px rgb(255, 1, 1);
+}

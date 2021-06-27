@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Ripple Button</title>
+</head>
+<body>
+    <div class="main">
+        <button class="style1">
+            Cick here
+        </button>
+        <button class="style2">
+            Cick here
+        </button>
+    </div>
+</body>
+    <script>
+        const btn = document.querySelectorAll('button');
+        btn.forEach(button=>{
+            button.addEventListener('click', function(e){
+                const x = e.clientX - e.target.offsetLeft;
+                const y = e.clientY - e.target.offsetTop;
+                const span = document.createElement('span');
+                span.style.left=x+'px';
+                span.style.top=y+'px';
+                this.appendChild(span)
+                setTimeout(()=> {
+                    this.removeChild(span)
+                }, 450)
+            })
+        })
+    </script>
+</html>
