@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Search width JQuery</title>
+</head>
+<body>
+    <div class="menu">
+        <div class="item active" data-fi="all">
+            Tất cả
+        </div>
+        <div class="item" data-fi="pc">
+            Máy tính 
+        </div>
+        <div class="item" data-fi="head-phone">
+            Tai nghe
+        </div>
+        <div class="item" data-fi="watch">
+            Đồng hồ
+        </div>
+    </div>
+    <div class="list-product">
+        <div class="item-product head-phone">
+            <img src="./img/hphone1.jpg" alt="">
+        </div>
+        <div class="item-product pc">
+            <img src="./img/pc1.jpg" alt="">
+        </div>
+        <div class="item-product pc">
+            <img src="./img/pc2.jpg" alt="">
+        </div>
+        <div class="item-product watch">
+            <img src="./img/watch1.jfif" alt="">
+        </div>
+        <div class="item-product head-phone">
+            <img src="./img/hphone2.jpg" alt="">
+        </div>
+        <div class="item-product watch">
+            <img src="./img/watch2.jfif" alt="">
+        </div>
+        <div class="item-product pc">
+            <img src="./img/pc3.jpg" alt="">
+        </div>
+        <div class="item-product pc">
+            <img src="./img/pc4.jpg" alt="">
+        </div>
+        <div class="item-product pc">
+            <img src="./img/pc5.jpg" alt="">
+        </div>
+        <div class="item-product watch">
+            <img src="./img/watch3.jpg" alt="">
+        </div>
+        <div class="item-product watch">
+            <img src="./img/watch4.png" alt="">
+        </div>
+        
+    </div>
+</body>
+    <script>
+        $(document).ready(function(){
+            $('.item').click( function() {
+                const data = $(this).attr('data-fi');
+                console.log(data)
+                if (data == 'all') {
+                    $('.item-product').show('1000');
+                } else {
+                    $('.item-product').not('.'+data).hide('1000');
+                    $('.item-product').filter('.'+data).show('1000');
+                }
+
+                document.querySelector('.item.active').classList.remove('active');
+                $(this).addClass('active');
+            })
+        })
+    </script>
+</html>
