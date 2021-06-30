@@ -35,7 +35,7 @@
         const imgItem = document.querySelectorAll('.img-item');
         if (span) {
             function zoom(id) {
-                const img_1 = document.querySelector(`#${id}`);
+                const img_1 = document.querySelector('#img-1');
                 const zoom = document.querySelector('.zoom');
 
                 let ratio = 2.5;
@@ -129,7 +129,7 @@
                     moveZoom(isX, isY);
                 });
             }
-            zoom('img-1');
+            zoom();
         }
 
         imgItem.forEach(item=>{
@@ -137,7 +137,7 @@
                 document.getElementById('img-1').src=e.target.currentSrc;
                 document.querySelector('.img-item.active').classList.remove('active');
                 e.target.classList.add('active')
-                zoom('img-1');
+                zoom();
             })
         })
     </script>
