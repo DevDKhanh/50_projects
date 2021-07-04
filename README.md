@@ -1,4 +1,4 @@
-# 50_project
+# 50_project - 7/50
 page home:  https://637737vnua.github.io/50_project
 
 
