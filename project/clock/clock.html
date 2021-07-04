@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Clock</title>
+</head>
+<body>
+    <div class="main">
+        <div class="clock">
+            <img src="./clock.png"/>
+        </div>
+        <div class="h"></div>
+        <div class="m"></div>
+        <div class="s"></div>
+        <div class="dot"></div>
+    </div>
+    <script>
+        const deg = 6;
+        const s = document.querySelector('.s');
+        const m = document.querySelector('.m');
+        const h = document.querySelector('.h');
+
+        setInterval(()=>{
+            let day = new Date();
+            let ss = day.getSeconds() * deg;
+            let mm = day.getMinutes() * deg;
+            let hh = day.getHours() * 30;
+
+            h.style.transform = `rotate(${hh+(mm/12)}deg)`;
+            m.style.transform = `rotate(${mm}deg)`;
+            s.style.transform = `rotate(${ss}deg)`;
+        }, 1000)
+    </script>
+</body>
+</html>
