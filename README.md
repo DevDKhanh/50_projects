@@ -12,6 +12,7 @@ I - Effect Html-Css-Js-Jquery:
 6. Text video : https://637737vnua.github.io/50_project/project/textVideo/textvideo.html
 7. Text random : https://637737vnua.github.io/50_project/project/textRandom/textrandom.html
 8. Clock : https://637737vnua.github.io/50_project/project/clock/clock.html
+9. MiniGameBauCua : https://637737vnua.github.io/50_project/project/gameBauCua/baucua.html
 
 
 

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="player">
+        <div class="money">
+            $<span  class="wallet">20000000</span>
+            <div class="buy-money">
+                +
+            </div>
+        </div>
+        <div class="muccuoc">
+            <select class="muc-tien-cuoc">
+                <option value="5000">5.000$</option>
+                <option value="10000">10.000$</option>
+                <option value="20000">20.000$</option>
+                <option value="50000">50.000$</option>
+                <option value="200000">200.000$</option>
+                <option value="500000">500.000$</option>
+            </select>
+        </div>
+        <div class="time">30s</div>
+        <div class="datcuoc">
+            <div class="xucxac xx x-1">
+            </div>
+            <div class="xucxac xx x-2">
+            </div>
+            <div class="xucxac xx x-3">
+            </div> 
+        </div>
+        <div class="datcuoc">
+            <div class="xucxac xx x-4">
+            </div>
+            <div class="xucxac xx x-5">
+            </div>
+            <div class="xucxac xx x-6">
+            </div> 
+        </div>
+    </div>
+    <div class="game-play">
+        <div class="logo-play"></div>
+        <div class="logo-play"></div>
+        <div class="logo-play"></div>
+    </div>
+    <script>
+    (function(){
+        const baseTime = 30;
+        const xucxac = document.querySelectorAll('.logo-play');
+        const cuoc = document.querySelectorAll('.xucxac.xx');
+        const time = document.querySelector('.time');
+        const wallet = document.querySelector('.wallet');
+        const btnBuyCoin = document.querySelector('.buy-money');
+
+        let vitien = wallet.innerHTML;
+        let mucuoc = 0;
+        let timePlay = baseTime; 
+        let isPlay = true;
+        let isReady = true;
+        let tinhtien = 0;
+
+        let checkMoney = {
+            "bau": {
+                "money": 0,
+                "loop": 0,
+            },
+            "cua": {
+                "money": 0,
+                "loop": 0,
+            },
+            "ca": {
+                "money": 0,
+                "loop": 0,
+            },
+            "nai": {
+                "money": 0,
+                "loop": 0,
+            },
+            "tom": {
+                "money": 0,
+                "loop": 0,
+            },
+            "ga": {
+                "money": 0,
+                "loop": 0,
+            },
+        };
+
+        btnBuyCoin.onclick =()=>{
+            buyCoin();
+        }
+
+        function run() {
+            mucTienCuoc();
+            runtime();
+            cuocTien();
+        }
+        run();
+
+        function play() {
+            xucxac.forEach((e)=>{
+                e.classList.add('xucxac');
+                e.classList.remove('logo-play');
+                let count = 0;
+                let playGame;
+
+                playGame = setInterval(()=>{
+                    const ranX = Math.round(Math.random(0)*2);
+                    const ranY = Math.round(Math.random(0)*1);
+                    count++;
+
+                    randomXX(e, ranX, ranY);
+                    if (count>40) {
+                        clearInterval(playGame);
+                        checkPos(ranX, ranY).lap <=1 ?
+                        tinhtien = tinhtien + checkPos(ranX, ranY).tien + (checkPos(ranX, ranY).tien*80/100):
+                        tinhtien = tinhtien + (checkPos(ranX, ranY).tien*80/100);
+                    }
+
+                }, 50);
+            });
+        }
+
+        function runtime() {
+            setInterval(()=>{
+                timePlay--;
+
+                if (timePlay <= 5) {
+                    isReady = false;
+                }
+
+                if (timePlay == 0) {
+                    isPlay && play();
+                    isPlay = false;
+                    setTimeout(()=>{
+                        toast(tinhtien);
+                        vitien = wallet.innerHTML;
+                        wallet.innerHTML = Number(vitien) + (tinhtien);
+                        setTimeout(()=>{
+                            resetPlay();
+                            isPlay = true;
+                            isReady = true;
+                            timePlay = baseTime;  
+                            tinhtien = 0;
+                            checkMoney = {
+                            "bau": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                            "cua": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                            "ca": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                            "nai": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                            "tom": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                            "ga": {
+                                "money": 0,
+                                "loop": 0,
+                            },
+                        };
+                            resetTienCuoc(); 
+                        }, 5000)
+                    }, 50*45) 
+                } 
+
+                if (timePlay >= 0) {
+                    time.innerHTML= `${timePlay}s`;
+                }
+            }, 1000)
+        }
+
+        function randomXX(e, ranX, ranY) {
+
+            const widthPlay = e.offsetWidth;
+            const heightPlay = e.offsetHeight;
+
+            const x = -widthPlay*ranX;
+            const y = -heightPlay*ranY;
+
+            e.style.backgroundPosition = `${x}px ${y}px`;
+        }
+
+        function checkPos(x, y) {
+            if (x == 0 && y == 0) {
+                checkMoney['bau'].loop = checkMoney['bau'].loop+1;
+                checkMoney['bau'].money
+                return {
+                    "tien": checkMoney['bau'].money,
+                    "lap": checkMoney['bau'].loop
+                };
+            } else if (x == 1 && y == 0) {
+                checkMoney['cua'].loop = checkMoney['cua'].loop+1;
+                checkMoney['cua'].money;
+                return {
+                    "tien": checkMoney['cua'].money,
+                    "lap": checkMoney['cua'].loop
+                };
+            } else if (x == 2 && y == 0) {
+                checkMoney['nai'].loop = checkMoney['nai'].loop+1;
+                checkMoney['nai'].money;
+                return {
+                    "tien": checkMoney['nai'].money,
+                    "lap": checkMoney['nai'].loop
+                };
+            } else if (x == 0 && y == 1) {
+                checkMoney['ca'].loop = checkMoney['ca'].loop+1;
+                checkMoney['ca'].money;
+                return {
+                    "tien": checkMoney['ca'].money,
+                    "lap": checkMoney['ca'].loop
+                };
+            } else if (x == 1 && y == 1) {
+                checkMoney['tom'].loop = checkMoney['tom'].loop+1;
+                checkMoney['tom'].money;
+                return {
+                    "tien": checkMoney['tom'].money,
+                    "lap": checkMoney['tom'].loop
+                };
+            } else if (x == 2 && y == 1) {
+                checkMoney['ga'].loop = checkMoney['ga'].loop+1;
+                checkMoney['ga'].money;
+                return {
+                    "tien": checkMoney['ga'].money,
+                    "lap": checkMoney['ga'].loop
+                };
+            }
+        }
+
+        function resetPlay() {
+            xucxac.forEach((e)=>{
+                e.classList.add('logo-play');
+                e.classList.remove('xucxac');
+                e.style.backgroundPosition = `0px 0px`;
+            });
+        }
+
+        function toast(text, type = 1) {
+            if (type == 1) {
+                const toast = document.createElement('div');
+                toast.classList.add('toast-winer');
+                text>=0?
+                toast.innerHTML=`+${text.toLocaleString('da-DK')}$`:
+                toast.innerHTML=`${text.toLocaleString('da-DK')}$`;
+
+                document.body.appendChild(toast);
+                setTimeout(()=>{
+                    document.body.removeChild(toast);
+                }, 3000);
+            } else {
+                const toast = document.createElement('div');
+                toast.classList.add('toast-msg');
+                toast.innerHTML= text;
+                document.body.appendChild(toast);
+                setTimeout(()=>{
+                    document.body.removeChild(toast);
+                }, 3000);
+            }
+        }
+        
+        function cuocTien() {
+            cuoc.forEach(e=>{
+                e.onclick=()=>{
+                    if (isReady) {
+                        const tiendat = document.createElement('div');
+                        const isCheck = e.lastChild.className=='tiencuoc';
+                        vitien = wallet.innerHTML;
+                        tiendat.classList.add('tiencuoc');
+
+                        if (!isCheck && vitien >0) {
+                            if (Number(vitien) >= mucuoc) {
+                                tiendat.innerHTML = mucuoc;
+                                e.appendChild(tiendat);
+                                checkDat(e, e.lastChild.innerHTML);
+                                wallet.innerHTML = Number(vitien) - mucuoc;
+                            } else {
+                                toast('Số dư không đủ!', 2);
+                            }
+                        } else {
+                            if (vitien > 0) {
+                                const themtien = e.lastChild.innerHTML;
+                                if (Number(vitien) >= mucuoc) {
+                                    e.lastChild.innerHTML = Number(themtien)+ mucuoc;
+                                    checkDat(e, e.lastChild.innerHTML);
+                                    wallet.innerHTML = Number(vitien) - mucuoc;
+                                } else {
+                                    toast('Số dư không đủ!', 2);
+                                }
+                            }
+                        }
+                    }
+                }
+            })
+        }
+
+        function mucTienCuoc() {
+            const mucTienDat = document.querySelector('.muc-tien-cuoc');
+            mucuoc = Number(mucTienDat.value);
+            mucTienDat.onchange = () => {
+                mucuoc = Number(mucTienDat.value);
+            }
+        }
+
+        function resetTienCuoc() {
+            cuoc.forEach(e=>{
+                const isCheck = e.lastChild.className=='tiencuoc';
+                if (isCheck) {
+                    e.removeChild(e.lastChild);
+                }
+            })
+        }
+
+        function checkDat(e, money) {
+            if (e.matches('.x-1')) {
+                checkMoney.bau.money = Number(money);
+            } else if (e.matches('.x-2')) {
+                checkMoney.cua.money = Number(money);
+            } else if (e.matches('.x-3')) {
+                checkMoney.nai.money = Number(money);
+            } else if (e.matches('.x-4')) {
+                checkMoney.ca.money = Number(money);
+            } else if (e.matches('.x-5')) {
+                checkMoney.tom.money = Number(money);
+            } else if (e.matches('.x-6')) {
+                checkMoney.ga.money = Number(money);
+            }
+        }
+
+        function buyCoin() {
+            vitien = wallet.innerHTML;
+            wallet.innerHTML = Number(vitien) + 1000000;
+        }
+    })()
+    </script>
+</body>
+</html>

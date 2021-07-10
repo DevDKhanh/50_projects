@@ -1,0 +1,205 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --size: 8vw;
+    --size2: 12vw;
+    --margin: 1.5vw;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.player {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-play {
+    display: flex;
+}
+
+.time {
+    font-size: 2.4rem;
+}
+
+.xucxac {
+    background-image: url('./baucua.png');
+    height: var(--size);
+    width: var(--size);
+    background-size: calc(3*var(--size)) calc(2*var(--size));
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1.5px solid #000;
+    border-radius: 1rem;
+    margin: var(--margin);
+}
+
+.logo-play {
+    background-image: url('./logo-bc.png');
+    height: var(--size);
+    width: var(--size);
+    background-size: var(--size) var(--size);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 1.5px solid #000;
+    border-radius: 1rem;
+    margin: var(--margin);
+}
+
+.btn {
+    padding: .5rem 2rem;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    outline: none;
+    background-image: linear-gradient(to right, rgb(255, 0, 221), rgb(89, 0, 255));
+}
+
+.xucxac.xx {
+    position: relative;
+    cursor: pointer;
+    border-radius: 0;
+    margin: 0;
+    height: var(--size2);
+    width: var(--size2);
+    background-size: calc(3*var(--size2)) calc(2*var(--size2));
+}
+
+.tiencuoc {
+    position: absolute;
+    color: #fff;
+    background-image: linear-gradient(to right, rgb(255, 115, 0), rgb(255, 0, 0));
+    padding: .3rem;
+    border-radius: 2rem;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+.datcuoc {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.x-1 {
+    background-position: 0 0;
+}
+.x-2 {
+    background-position: calc(-1*var(--size2)) 0;
+}
+.x-3 {
+    background-position: calc(-2*var(--size2)) 0;
+}
+.x-4 {
+    background-position: calc(0*var(--size2)) calc(-1*var(--size2));
+}
+.x-5 {
+    background-position: calc(-1*var(--size2)) calc(-1*var(--size2));
+}
+.x-6{
+    background-position: calc(-2*var(--size2)) calc(-1*var(--size2));
+}
+
+.money-control {
+    display: flex;
+}
+
+.money {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: 2px solid rgb(98, 0, 255);
+    padding: .5rem 1.5rem;
+    border-radius: 3rem;
+    font-size: 1.5rem;
+    color: rgb(98, 0, 255);
+    font-weight: bold;
+}
+
+.buy-money {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border: 2px solid rgb(98, 0, 255);
+    background-color: rgb(98, 0, 255);
+    top: 50%;
+    right: -50px;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    color: #fff;
+}
+
+.buy-money:hover {
+     cursor: pointer;
+     opacity: .8;
+}
+
+.muccuoc select, option {
+    border: 2px solid rgb(255, 60, 0);
+    padding: .5rem 1.5rem;
+    font-size: 1.5rem;
+    color: rgb(255, 60, 0);
+    outline: none;
+}
+
+.toast-winer {
+    position: fixed;
+    color: rgb(255, 105, 5);
+    font-weight: 700;
+    font-size: 7vw;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: toast-win 2.5s forwards;
+}
+
+.toast-msg {
+    position: fixed;
+    color: rgb(197, 5, 15);
+    font-weight: 700;
+    font-size: 3vw;
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: toast-win 2.5s forwards;
+}
+
+@keyframes toast-win {
+    0% {
+        top: 60%;
+        opacity: 1;
+    } 100% {
+        top: 20%;
+        opacity: 0;
+    }
+}
