@@ -56,8 +56,9 @@
         const time = document.querySelector('.time');
         const wallet = document.querySelector('.wallet');
         const btnBuyCoin = document.querySelector('.buy-money');
-        
-        let walletCoin = 20000000;
+
+        !localStorageCoin().checkWallet() && localStorageCoin().initWallet();
+        let walletCoin = Number(localStorageCoin().getCoin());
         let mucuoc = 0;
         let timePlay = baseTime; 
         let isPlay = true;
@@ -142,6 +143,7 @@
                         toast(tinhtien);
 
                         walletCoin = walletCoin + tinhtien;
+                        localStorageCoin().setCoin();
                         wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                         setTimeout(()=>{
                             resetPlay();
@@ -289,6 +291,7 @@
                                 e.appendChild(tiendat);
                                 checkDat(e, e.lastChild.innerHTML);
                                 walletCoin = walletCoin - mucuoc;
+                                localStorageCoin().setCoin();
                                 wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                             } else {
                                 toast('Số dư không đủ!', 2);
@@ -300,6 +303,7 @@
                                     e.lastChild.innerHTML = Number(themtien)+ mucuoc;
                                     checkDat(e, e.lastChild.innerHTML);
                                     walletCoin = walletCoin - mucuoc;
+                                    localStorageCoin().setCoin();
                                     wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                                 } else {
                                     toast('Số dư không đủ!', 2);
@@ -346,8 +350,27 @@
 
         function buyCoin() {
             walletCoin = walletCoin + 1000000;
+            localStorageCoin().setCoin();
             wallet.innerHTML = walletCoin.toLocaleString('da-DK');
         }
+
+        function localStorageCoin() {
+            return {
+                setCoin() {
+                    localStorage.setItem("coin-bau-cua", walletCoin.toString());
+                },
+                getCoin() {
+                    return localStorage.getItem("coin-bau-cua");
+                }, 
+                checkWallet() {
+                    return localStorage.getItem("coin-bau-cua")?true:false;
+                },
+                initWallet() {
+                    localStorage.setItem("coin-bau-cua", '20000000');
+                }
+            }
+        }
+
     })()
     </script>
 </body>
