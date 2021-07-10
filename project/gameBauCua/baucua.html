@@ -56,14 +56,13 @@
         const time = document.querySelector('.time');
         const wallet = document.querySelector('.wallet');
         const btnBuyCoin = document.querySelector('.buy-money');
-
-        let vitien = wallet.innerHTML;
+        
+        let walletCoin = 20000000;
         let mucuoc = 0;
         let timePlay = baseTime; 
         let isPlay = true;
         let isReady = true;
         let tinhtien = 0;
-
         let checkMoney = {
             "bau": {
                 "money": 0,
@@ -90,6 +89,8 @@
                 "loop": 0,
             },
         };
+        
+        wallet.innerHTML = walletCoin.toLocaleString('da-DK');
 
         btnBuyCoin.onclick =()=>{
             buyCoin();
@@ -139,8 +140,9 @@
                     isPlay = false;
                     setTimeout(()=>{
                         toast(tinhtien);
-                        vitien = wallet.innerHTML;
-                        wallet.innerHTML = Number(vitien) + (tinhtien);
+
+                        walletCoin = walletCoin + tinhtien;
+                        wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                         setTimeout(()=>{
                             resetPlay();
                             isPlay = true;
@@ -278,25 +280,27 @@
                     if (isReady) {
                         const tiendat = document.createElement('div');
                         const isCheck = e.lastChild.className=='tiencuoc';
-                        vitien = wallet.innerHTML;
+
                         tiendat.classList.add('tiencuoc');
 
-                        if (!isCheck && vitien >0) {
-                            if (Number(vitien) >= mucuoc) {
+                        if (!isCheck && walletCoin >0) {
+                            if (walletCoin >= mucuoc) {
                                 tiendat.innerHTML = mucuoc;
                                 e.appendChild(tiendat);
                                 checkDat(e, e.lastChild.innerHTML);
-                                wallet.innerHTML = Number(vitien) - mucuoc;
+                                walletCoin = walletCoin - mucuoc;
+                                wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                             } else {
                                 toast('Số dư không đủ!', 2);
                             }
                         } else {
-                            if (vitien > 0) {
+                            if (walletCoin > 0) {
                                 const themtien = e.lastChild.innerHTML;
-                                if (Number(vitien) >= mucuoc) {
+                                if (walletCoin >= mucuoc) {
                                     e.lastChild.innerHTML = Number(themtien)+ mucuoc;
                                     checkDat(e, e.lastChild.innerHTML);
-                                    wallet.innerHTML = Number(vitien) - mucuoc;
+                                    walletCoin = walletCoin - mucuoc;
+                                    wallet.innerHTML = walletCoin.toLocaleString('da-DK');
                                 } else {
                                     toast('Số dư không đủ!', 2);
                                 }
@@ -341,8 +345,8 @@
         }
 
         function buyCoin() {
-            vitien = wallet.innerHTML;
-            wallet.innerHTML = Number(vitien) + 1000000;
+            walletCoin = walletCoin + 1000000;
+            wallet.innerHTML = walletCoin.toLocaleString('da-DK');
         }
     })()
     </script>
