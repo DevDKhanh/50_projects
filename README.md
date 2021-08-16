@@ -1,5 +1,5 @@
 # 50_project - 16/50
-page home: www.duykhanhdev.com
+My page: www.duykhanhdev.com
 
 
 
@@ -19,7 +19,7 @@ I - Effect Html-Css-Js-Jquery:
 II - NodeJS/Express:
 1. E-commerce website: https://app-shop-tnt.herokuapp.com
 2. Edu website: https://courseonline-vnua.herokuapp.com
-3. Youtube API: https://metube-v.herokuapp.com
+3. Youtube API (client's project): https://metube-v.herokuapp.com
 
 III. ReactJS
 1. Champions-lol: https://lmht-chanpions.netlify.app
