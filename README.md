@@ -1,5 +1,5 @@
 # 50_project - 16/50
-page home:  <a href="www.duykhanhdev.com" target="_blank"> My page </a>
+page home: www.duykhanhdev.com
 
 
 
