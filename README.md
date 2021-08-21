@@ -1,4 +1,4 @@
-# 50_project - 16/50
+# 50_project - 17/50
 My page: www.duykhanhdev.com
 
 
@@ -13,6 +13,7 @@ I - Effect Html-Css-Js-Jquery:
 7. Text random : https://637737vnua.github.io/50_project/project/textRandom/textrandom.html
 8. Clock : https://637737vnua.github.io/50_project/project/clock/clock.html
 9. MiniGameBauCua : https://637737vnua.github.io/50_project/project/gameBauCua/baucua.html
+10. Grid Layout : https://637737vnua.github.io/50_project/project/gridLayout/index.html
 
 
 
