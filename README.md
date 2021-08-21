@@ -27,5 +27,5 @@ III. ReactJS
 
 IV. UI web
 1. UI demo 1(pc): https://DevDKhanh.github.io/50_projects/project/UI-pc-1
-2. UI profile mobile (client's project): https://DevDKhanh.github.io/vlance_ID.49048
-3. UI page "vaycucde" (client's project): https://DevDKhanh.github.io/clone-app-1
+2. UI profile mobile (client's project): https://637737vnua.github.io/vlance_ID.49048
+3. UI page "vaycucde" (client's project): https://637737vnua.github.io/clone-app-1
