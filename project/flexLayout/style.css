@@ -138,3 +138,27 @@
     border-radius: 50%;
     background-color: rgb(0, 119, 255);
 }
+
+@media screen and (max-width: 1023px) {
+    .card-col {
+        width: 33.33%;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .card-col {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .card-col {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .card-col {
+        width: 100%;
+    }
+}
