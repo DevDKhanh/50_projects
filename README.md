@@ -13,8 +13,8 @@ I - Effect Html-Css-Js-Jquery:
 7. Text random : https://DevDKhanh.github.io/50_projects/project/textRandom/textrandom.html
 8. Clock : https://DevDKhanh.github.io/50_projects/project/clock/clock.html
 9. MiniGameBauCua : https://DevDKhanh.github.io/50_projects/project/gameBauCua/baucua.html
-10. Grid Layout : https://DevDKhanh.github.io/50_projects/project/gridLayout/index.html
-10. Flex Layout : https://DevDKhanh.github.io/50_projects/project/flexLayout/index.html
+10. Grid Layout : https://DevDKhanh.github.io/50_projects/project/gridLayout
+10. Flex Layout : https://DevDKhanh.github.io/50_projects/project/flexLayout
 
 
 
