@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.list-card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card-col {
+    width: 25%;
+    padding: 1.1rem;
+}
+
+.card {
+    height: 100%;
+    transition: .3s ease;
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.205);
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 .7rem 1.2rem rgba(131, 136, 151, 0.521);
+}
+
+.card-img {
+    height: 170px;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card-content-info {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content-info__text {
+    flex: 1;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display:-webkit-box;
+    -webkit-line-clamp:3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+
+.card-content-info__user {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.avatar-user {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.avatar-user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.name-user {
+    height: 100%;
+    margin-left: .5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name-user p {
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgb(46, 46, 46);
+}
+
+.name-user small {
+    font-size: .7rem;
+    font-weight: 500;
+    color: rgb(109, 109, 109);
+}
+
+.card-content__footer {
+    border-top: 1px solid #ccc;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.live-icon {
+    color: #fff;
+    background-color: rgb(255, 64, 16);
+    padding: .2rem .5rem;
+    border-radius: .3rem;
+    font-size: .9rem;
+}
+
+.num-view {
+    position: relative;
+    font-size: .8rem;
+    color: rgb(82, 82, 82);
+}
+
+.num-view::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(0, 119, 255);
+}
