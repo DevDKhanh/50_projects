@@ -1,4 +1,4 @@
-# 50_projects - 17/50
+# 50_projects - 18/50
 My page: www.duykhanhdev.com
 
 
@@ -14,6 +14,7 @@ I - Effect Html-Css-Js-Jquery:
 8. Clock : https://DevDKhanh.github.io/50_projects/project/clock/clock.html
 9. MiniGameBauCua : https://DevDKhanh.github.io/50_projects/project/gameBauCua/baucua.html
 10. Grid Layout : https://DevDKhanh.github.io/50_projects/project/gridLayout/index.html
+10. Flex Layout : https://DevDKhanh.github.io/50_projects/project/flexLayout/index.html
 
 
 
