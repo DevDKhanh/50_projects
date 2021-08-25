@@ -1,4 +1,4 @@
-# 50_projects - 18/50
+# 50_projects - 19/50
 My page: www.duykhanhdev.com
 
 
@@ -30,3 +30,4 @@ IV. UI web
 1. UI demo 1(pc): https://DevDKhanh.github.io/50_projects/project/UI-pc-1
 2. UI profile mobile (customer): https://637737vnua.github.io/vlance_ID.49048
 3. UI page "vaycucde" (customer): https://637737vnua.github.io/clone-app-1
+4. UI mobile 2 (customer): https://devdkhanh.github.io/UI-mobile-2
