@@ -1,0 +1,106 @@
+html {
+	box-sizing: border-box;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button {
+	outline: none;
+}
+input {
+	line-height: normal;
+}
+label,
+button {
+	cursor: pointer;
+}
+a {
+	text-decoration: none;
+}
+img {
+	display: block;
+	max-width: 100%;
+}
+
+html,
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.form-add {
+	min-width: 490px;
+	max-width: 500px;
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+	background-color: rgb(255, 255, 255);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	display: block;
+	cursor: text;
+}
+
+.form-add input {
+	flex: 1;
+	padding: 0.2rem 0.5rem;
+	border: none;
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
+	height: 100%;
+	width: min-content;
+	border-radius: 0;
+	background-color: #fff;
+	color: #000;
+	display: inline-block;
+}
+
+.form-add #add-tag {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 100%;
+}
+
+.tag-item {
+	background-color: #ccc;
+	max-width: max-content;
+	display: inline-flex;
+	max-width: 100%;
+	justify-content: center;
+	align-items: center;
+	padding: 0.2rem 0.5rem;
+	border-radius: 2rem;
+	margin-left: 0.5rem;
+	margin-top: 0.5rem;
+}
+
+.tag-item .content {
+	max-width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.tag-item .close {
+	font-size: 1.2rem;
+	margin-left: 1rem;
+}
+
+.tag-item .close {
+	font-size: 1.2rem;
+	margin-left: 1rem;
+}
+
+.tag-item .close:hover {
+	cursor: pointer;
+}

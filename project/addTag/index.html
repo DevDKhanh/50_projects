@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div class="form">
+			<h1>Add tag</h1>
+			<label class="form-add" for="input-tag">
+				<div id="add-tag">
+					<input type="text" id="input-tag" />
+				</div>
+			</label>
+		</div>
+		<script>
+			const $ = document.querySelector.bind(document);
+			const $$ = document.querySelectorAll.bind(document);
+
+			const mainTag = $('#add-tag');
+			const value = $('#input-tag');
+			let tags = [];
+
+			function addTag(text) {
+				const id = new Date();
+				const elm = document.createElement('div');
+				elm.classList.add('tag-item');
+				elm.innerHTML = `<div class="content">${text}</div> <div class="close" data-id="${Number(
+					id,
+				)}">&times;</div>`;
+				if (mainTag) {
+					const data = {
+						content: elm,
+						id: Number(id),
+					};
+					tags.push(data);
+					renderViewTag();
+				}
+			}
+
+			function renderViewTag() {
+				tags.slice()
+					.reverse()
+					.forEach(value => {
+						mainTag.prepend(value.content);
+					});
+			}
+
+			function deleteTag() {
+				mainTag.addEventListener('click', function (e) {
+					if (e.target.closest('.close')) {
+						const ID = Number(e.target.dataset.id);
+						tags = tags.filter(x => {
+							if (x.id == ID) {
+								mainTag.removeChild(x.content);
+							}
+							return x.id != ID;
+						});
+					}
+				});
+			}
+
+			function input() {
+				window.addEventListener('keydown', function (e) {
+					if (e.which == 13) {
+						if (value.value.trim() !== '') {
+							addTag(value.value);
+							value.value = '';
+						} else {
+							value.value = '';
+						}
+					}
+				});
+			}
+
+			function start() {
+				input();
+				deleteTag();
+			}
+			start();
+		</script>
+	</body>
+</html>

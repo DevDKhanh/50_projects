@@ -1,115 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>carousel</title>
-</head>
-<body>
-    <div class="carousel">
-        <div class="slideshow">
-            <div class="item-show" id="first">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img1.jpg" alt="">
-            </div>
-            <div class="item-show">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img2.jpg" alt="">
-            </div>
-            <div class="item-show">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img3.jpg" alt="">
-            </div>
-            <div class="item-show">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img4.jpg" alt="">
-            </div>
-            <div class="item-show">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img1.jpg" alt="">
-            </div>
-            <div class="item-show" id="end">
-                <div class="title">
-                    Travel
-                </div>
-                <div class="card-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Si verbum sequimur, primum longius verbum praepositum quam bonum.</p></div>
-                <img src="./img/img2.jpg" alt="">
-            </div>
-        </div>
-        <div class="btn btnPrev">
-            Prev
-        </div>
-        <div class="btn btnNext">
-            Next
-        </div>
-    </div>
-    <script>
-        const silde = document.querySelector('.slideshow');
-        const item = document.querySelectorAll('.item-show');
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<title>carousel</title>
+	</head>
+	<body>
+		<div class="carousel">
+			<div class="slideshow">
+				<div class="item-show" id="first">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+				<div class="item-show">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+				<div class="item-show">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/2816323/pexels-photo-2816323.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+				<div class="item-show">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/2327867/pexels-photo-2327867.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+				<div class="item-show">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+				<div class="item-show" id="end">
+					<div class="title">Travel</div>
+					<div class="card-text">
+						<p>
+							Lorem ipsum dolor sit amet,
+							consectetur adipiscing elit. Si
+							verbum sequimur, primum longius
+							verbum praepositum quam bonum.
+						</p>
+					</div>
+					<img
+						src="https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+						alt=""
+					/>
+				</div>
+			</div>
+			<div class="btn btnPrev">Prev</div>
+			<div class="btn btnNext">Next</div>
+		</div>
+		<script>
+			const silde = document.querySelector(".slideshow");
+			const item =
+				document.querySelectorAll(".item-show");
 
-        const btnNext = document.querySelector('.btnNext');
-        const btnPrev = document.querySelector('.btnPrev');
+			const btnNext = document.querySelector(".btnNext");
+			const btnPrev = document.querySelector(".btnPrev");
 
-        let count = 1;
-        let auto = setInterval(autoShow, 4000);
+			let count = 1;
+			let auto = setInterval(autoShow, 4000);
 
-        const size = item[0].clientWidth;
-        silde.style.transform = 'translateX('+(-size*count) +'px)';
+			const size = item[0].clientWidth;
+			silde.style.transform =
+				"translateX(" + -size * count + "px)";
 
-        btnNext.addEventListener('click', ()=>{
-            if (count >= item.length-1) return;
-            silde.style.transition = `transform 1s ease-in-out`;
-            count++;
-            silde.style.transform = `translateX(${-size*count}px)`;
-            clearInterval(auto);
-            auto = setInterval(autoShow, 4000);
-        });
+			btnNext.addEventListener("click", () => {
+				if (count >= item.length - 1) return;
+				silde.style.transition = `transform 1s ease-in-out`;
+				count++;
+				silde.style.transform = `translateX(${
+					-size * count
+				}px)`;
+				clearInterval(auto);
+				auto = setInterval(autoShow, 4000);
+			});
 
-        btnPrev.addEventListener('click', ()=>{
-            if (count <= 0) return;
-            silde.style.transition = `transform 1s ease-in-out`;
-            count--;
-            silde.style.transform = `translateX(${-size*count}px)`;
-            clearInterval(auto);
-            auto = setInterval(autoShow, 4000);
-        });
+			btnPrev.addEventListener("click", () => {
+				if (count <= 0) return;
+				silde.style.transition = `transform 1s ease-in-out`;
+				count--;
+				silde.style.transform = `translateX(${
+					-size * count
+				}px)`;
+				clearInterval(auto);
+				auto = setInterval(autoShow, 4000);
+			});
 
-        silde.addEventListener('transitionend', ()=>{
-            if (item[count].id == 'first') {
-                silde.style.transition='none';
-                count = item.length-2;
-                silde.style.transform = `translateX(${-size*count}px)`;
-            }
-            if (item[count].id == 'end') {
-                silde.style.transition='none';
-                count = item.length - count;
-                silde.style.transform = `translateX(${-size*count}px)`;
-            }
-        })
+			silde.addEventListener("transitionend", () => {
+				if (item[count].id == "first") {
+					silde.style.transition = "none";
+					count = item.length - 2;
+					silde.style.transform = `translateX(${
+						-size * count
+					}px)`;
+				}
+				if (item[count].id == "end") {
+					silde.style.transition = "none";
+					count = item.length - count;
+					silde.style.transform = `translateX(${
+						-size * count
+					}px)`;
+				}
+			});
 
-        function autoShow() {
-            if (count >= item.length-1) return;
-            silde.style.transition = `transform 1s ease-in-out`;
-            count++;
-            silde.style.transform = `translateX(${-size*count}px)`;
-        }
-    </script>
-</body>
+			function autoShow() {
+				if (count >= item.length - 1) return;
+				silde.style.transition = `transform 1s ease-in-out`;
+				count++;
+				silde.style.transform = `translateX(${
+					-size * count
+				}px)`;
+			}
+		</script>
+	</body>
 </html>
