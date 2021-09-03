@@ -1,4 +1,4 @@
-# 50_projects - 21/50
+# 50_projects - 22/50
 My page: www.duykhanhdev.com
 I - Effect Html-Css-Js-Jquery:
 
@@ -32,6 +32,7 @@ II - NodeJS/Express:
 III. ReactJS
 
 1. Champions-lol: https://lmht-chanpions.netlify.app
+2. To do list: https://to-do-list-devd.netlify.app/
 
 IV. UI web
 
