@@ -32,7 +32,7 @@ II - NodeJS/Express:
 III. ReactJS
 
 1. Champions-lol: https://lmht-chanpions.netlify.app
-2. To do list: https://to-do-list-devd.netlify.app/
+2. To do list: https://todoappk.netlify.app/
 
 IV. UI web
 
