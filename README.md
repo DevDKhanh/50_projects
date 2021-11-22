@@ -42,3 +42,4 @@ IV. UI web
 2. UI profile mobile (customer): https://637737vnua.github.io/vlance_ID.49048
 3. UI page "vaycucde" (customer): https://637737vnua.github.io/clone-app-1
 4. UI mobile 2 (customer): https://devdkhanh.github.io/UI-mobile-2
+5. UI page: https://clone-ui-page.netlify.app/
