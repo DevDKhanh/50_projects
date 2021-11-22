@@ -1,6 +1,6 @@
-# 50_projects - 20/50
-My page: www.duykhanhdev.com
-I - Effect Html-Css-Js-Jquery:
+# 50_projects - 23/50
+
+My page: www.duykhanhdev.com I - Effect Html-Css-Js-Jquery:
 
 1. Card contact :
    https://DevDKhanh.github.io/50_projects/project/cardContact/cardContact.html
@@ -22,6 +22,7 @@ I - Effect Html-Css-Js-Jquery:
 10. Grid Layout : https://DevDKhanh.github.io/50_projects/project/gridLayout
 11. Flex Layout : https://DevDKhanh.github.io/50_projects/project/flexLayout
 12. Add Tag : https://DevDKhanh.github.io/50_projects/project/addTag
+13. Lucky wheel : https://DevDKhanh.github.io/50_projects/project/luckyWheel
 
 II - NodeJS/Express:
 
@@ -32,6 +33,8 @@ II - NodeJS/Express:
 III. ReactJS
 
 1. Champions-lol: https://lmht-chanpions.netlify.app
+2. Todolist : https://todoappk.netlify.app/
+3. Book exchange : https://test.duykhanhdev.com
 
 IV. UI web
 
