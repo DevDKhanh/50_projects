@@ -11,7 +11,7 @@
 	//=====< Danh sách phần thưởng >=====
 	const listGift = [
 		{
-			text: 'Inphone 13',
+			text: 'I phone 13',
 			percent: 0.01 / 100,
 		},
 		{
