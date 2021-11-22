@@ -119,8 +119,8 @@
 			//=====< Cộng lần lượt phần trăm trúng của các phần thưởng >=====
 			currentPercent += item.percent;
 
-			//=====< Số ngẫu nhiên nhỏ hơn phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
-			if (randomNumber < currentPercent) {
+			//=====< Số ngẫu nhiên nhỏ hơn hoặc bằng phần trăm hiện tại thì thêm phần thưởng vào danh sách >=====
+			if (randomNumber <= currentPercent) {
 				list.push({ ...item, index });
 			}
 		});
