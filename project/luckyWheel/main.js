@@ -28,7 +28,7 @@
 		},
 		{
 			text: 'Laptop',
-			percent: 0.05,
+			percent: 0.05 / 100,
 		},
 		{
 			text: 'Một cái like',
