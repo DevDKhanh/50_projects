@@ -12,35 +12,35 @@
 	const listGift = [
 		{
 			text: 'I phone 13',
-			percent: 0.01 / 100,
+			percent: 10 / 100,
 		},
 		{
 			text: 'Siêu xe',
-			percent: 0.001 / 100,
+			percent: 10 / 100,
 		},
 		{
 			text: '1tr vnd',
-			percent: 2 / 100,
+			percent: 5 / 100,
 		},
 		{
 			text: 'Khóa học html-css free',
-			percent: 1 / 100,
+			percent: 5 / 100,
 		},
 		{
 			text: 'Laptop',
-			percent: 0.05 / 100,
+			percent: 5 / 100,
 		},
 		{
 			text: 'Một cái like',
-			percent: 90 / 100,
+			percent: 40 / 100,
 		},
 		{
 			text: 'Khóa học js free',
-			percent: 3 / 100,
+			percent: 10 / 100,
 		},
 		{
 			text: 'Áo khoác Gucci',
-			percent: 1.939,
+			percent: 20 /100,
 		},
 	];
 
